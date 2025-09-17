@@ -24,3 +24,74 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes bounceAround {
+  0% {
+    transform: translate(-100vw, 0) rotate(0deg); /* Start off-screen left */
+  }
+  10% {
+    transform: translate(-50vw, 10vh) rotate(15deg);
+  }
+  25% {
+    transform: translate(0vw, -5vh) rotate(-10deg);
+  }
+  40% {
+    transform: translate(20vw, 15vh) rotate(20deg);
+  }
+  55% {
+    transform: translate(40vw, -20vh) rotate(-15deg);
+  }
+  70% {
+    transform: translate(60vw, 5vh) rotate(10deg);
+  }
+  85% {
+    transform: translate(80vw, 10vh) rotate(-5deg);
+  }
+  100% {
+    transform: translate(120vw, 0) rotate(0deg); /* End off-screen right */
+  }
+}
+
+.animate-bounce-around {
+  /* We'll set duration and delay inline in JS now, so remove from here */
+  animation-name: bounceAround;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Subtle up/down movement */
+  }
+}
+
+.animate-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+/* Existing fade-in-up animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
