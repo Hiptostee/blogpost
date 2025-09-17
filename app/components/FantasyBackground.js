@@ -22,7 +22,7 @@ export function FantasyBackground({ className }) {
     background: { color: { value: "transparent" } },
     fullScreen: { enable: false },
     particles: {
-      number: { value: 250, density: { enable: true, value_area: 800 } },
+      number: { value: 300, density: { enable: true, value_area: 800 } },
       color: { value: "#FEE2E2" },
       shape: { type: "star" },
       opacity: {
@@ -115,7 +115,7 @@ export function FantasyBackground({ className }) {
         />
       )}
 
-      {Array.from({ length: 5 }).map((_, i) => (
+      {Array.from({ length: 3 }).map((_, i) => (
         <FlyingWitch key={i} size={70 + i * 10} speed={2 + i} />
       ))}
     </div>
