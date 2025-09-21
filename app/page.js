@@ -23,52 +23,16 @@ export default function BlogPost() {
   }, []);
 
   return (
-    <div className="min-h-screen text-gray-900 dark:text-gray-100 bg-gradient-to-t from-yellow-100 via-orange-300 to-blue-400 dark:from-yellow-700 dark:via-orange-800 dark:to-blue-900 relative font-serif overflow-hidden">
+    <div className="min-h-screen text-gray-900 dark:text-gray-100 bg-gradient-to-t from-yellow-100 via-orange-300 to-blue-400 dark:from-yellow-700 dark:via-orange-800 dark:to-blue-900 relative font-serif">
       <FantasyBackground className="absolute inset-0 z-0" />{" "}
       {/* This now includes both sparkles and witch */}
-      {/* NEW: Floating Leaf Images - using your provided SVG */}
-      {/* <div className="absolute top-[10%] left-[15%] w-10 h-10 text-orange-400 opacity-80 rotate-[30deg] animate-fall-1 z-[1] pointer-events-none">
-        <Image
-          src="/leaf.svg"
-          alt="Floating leaf"
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
-      <div className="absolute top-[20%] right-[10%] w-12 h-12 text-red-500 opacity-70 rotate-[-45deg] animate-fall-2 z-[1] pointer-events-none">
-        <Image
-          src="/leaf.svg"
-          alt="Floating leaf"
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
-      <div className="absolute bottom-[25%] left-[5%] w-14 h-14 text-yellow-500 opacity-75 rotate-[15deg] animate-fall-3 z-[1] pointer-events-none">
-        <Image
-          src="/leaf.svg"
-          alt="Floating leaf"
-          layout="fill"
-          objectFit="contain"
-        />
-      </div>
-      <div className="absolute top-[40%] right-[20%] w-8 h-8 text-amber-600 opacity-60 rotate-[60deg] animate-fall-4 z-[1] pointer-events-none">
-        <Image
-          src="/leaf.svg"
-          alt="Floating leaf"
-          layout="fill"
-          objectFit="contain"
-        />
-      </div> */}
       <main className="container mx-auto px-4 py-16 relative z-10">
         {" "}
         {/* z-10 ensures content is above background */}
-        <article
-          className="relative max-w-3xl mx-auto bg-white/15 dark:bg-gray-900/20 backdrop-blur-2xl shadow-2xl rounded-3xl p-8 md:p-12 overflow-hidden"
-          style={{
-            boxShadow:
-              "0 0 20px rgba(34, 197, 94, 0.6), 0 0 60px rgba(34, 197, 94, 0.3)",
-          }}
-        >
+        <article className="focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 focus:ring-offset-2 focus:outline-none relative max-w-3xl mx-auto border border-green-700 bg-white/15 dark:bg-gray-900/20 backdrop-blur-2xl shadow-3xl rounded-3xl p-8 md:p-12 overflow-hidden">
+          {/* Enhanced Vine SVGs for a wrapping effect */}
+          {/* Top-Left Corner Vine */}
+
           {/* Content */}
           <header className="mb-12 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
@@ -98,13 +62,10 @@ export default function BlogPost() {
               beautiful and reader-friendly blog.
             </p>
 
-            <div className="relative w-full h-80 my-8 rounded-xl overflow-hidden shadow-2xl fade-in-up">
-              <Image
-                src="/enchanted_forest.jpg"
-                alt="A magical autumn forest scene"
-                layout="fill"
-                objectFit="cover"
-              />
+            <div className="relative w-full h-80 bg-gradient-to-br from-green-200/30 to-yellow-200/20 dark:from-green-700/20 dark:to-yellow-600/10 rounded-xl flex items-center justify-center shadow-inner my-8 fade-in-up">
+              <span className="text-gray-600 dark:text-gray-400 text-lg">
+                [Placeholder for Magical Image]
+              </span>
             </div>
 
             <p className="fade-in-up">
