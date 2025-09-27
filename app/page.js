@@ -123,7 +123,7 @@ export default function BlogPost() {
                 Fantasy: My Experience and Opinions on Escapism ✨
               </h1>
               <p className="text-sm text-gray-700 dark:text-gray-300">
-                By Joe Marra | Published on September --th, 2025
+                By Joe Marra | Published on September 27th, 2025
               </p>
             </header>
 
