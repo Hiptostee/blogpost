@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
-import { FantasyBackground } from "../app/components/FantasyBackground"; // Assuming this path is correct
+import { FantasyBackground } from "../app/components/FantasyBackground";
 
 export default function BlogPost() {
   useEffect(() => {
@@ -77,10 +77,10 @@ export default function BlogPost() {
               </p>
               <br />
               <div className="my-8 fade-in-up flex flex-col items-center">
-                <div className="relative w-full md:w-2/3 h-80">
+                <div className="relative w-full max-w-lg aspect-[4/3]">
                   <Image
                     src="/greece.JPG"
-                    alt="A person at the Parthenon holding a Percy Jackson book."
+                    alt="Me at Greece with Sea of Monsters Book"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-xl shadow-lg"
@@ -124,11 +124,10 @@ export default function BlogPost() {
               </p>
               <br />
               <div className="my-8 fade-in-up flex flex-col items-center">
-                <div className="relative w-full md:w-2/3 h-80">
-                  {/* New image: person carving a wand */}
+                <div className="relative w-full max-w-lg aspect-[3/4]">
                   <Image
-                    src="/wand-carving.jpg" // Placeholder for your image
-                    alt="Person carving a wooden stick into a wand."
+                    src="/wands.jpeg"
+                    alt="Harry Potter Homemade Wants"
                     layout="fill"
                     objectFit="cover"
                     className="rounded-xl shadow-lg"
@@ -201,13 +200,13 @@ export default function BlogPost() {
                 discover more about ourselves.
               </p>
               <br />
-              <div className="relative w-full h-52 bg-gradient-to-br from-green-200/30 to-yellow-200/20 dark:from-green-700/20 dark:to-yellow-600/10 rounded-xl flex items-center justify-center shadow-inner my-8 fade-in-up">
+              <div className="relative w-full max-w-lg mx-auto aspect-[8/2]">
                 <Image
                   src="/hog.jpg"
-                  alt="Illustrations of the four Hogwarts house crests."
+                  alt="Hogwarts Houses"
                   layout="fill"
-                  objectFit="contain"
-                  className="rounded-xl"
+                  objectFit="cover"
+                  className="rounded-xl shadow-lg"
                 />
               </div>
               <br />
