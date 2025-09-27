@@ -5,6 +5,88 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { FantasyBackground } from "../app/components/FantasyBackground";
 
+const citations = [
+  {
+    author: "AniaArtNL.",
+    title: "Hogwarts House Banners.",
+    container: "DeviantArt",
+    date: "29 Jan. 2017,",
+    url: "https://www.deviantart.com/aniaartnl/art/Hogwarts-House-Banners-660290065.",
+  },
+  {
+    author: '"Flying Witch PNG Picture."',
+    title: "PNG Img,",
+    date: "Accessed 27 Sept. 2025.",
+    url: "https://pngimg.com/image/42264.",
+    type: "image", // Custom type for styling/structure if needed
+  },
+  {
+    author: "Riordan, Rick.",
+    title: "*The Lightning Thief*.",
+    publisher: "Hyperion,",
+    date: "2005.",
+  },
+  {
+    author: "Riordan, Rick.",
+    title: "*The Sea of Monsters*.",
+    publisher: "Disney Hyperion,",
+    date: "2006.",
+  },
+  {
+    author: "Rowling, J. K.",
+    title: "*Harry Potter and the Sorcerer's Stone*.",
+    publisher: "Scholastic,",
+    date: "1998.",
+  },
+];
+
+const sortedCitations = [...citations].sort((a, b) => {
+  const aText = a.author || a.title;
+  const bText = b.author || b.title;
+  return aText.toLowerCase().localeCompare(bText.toLowerCase());
+});
+
+const CitationEntry = ({ citation }) => {
+  // Construct the text content for MLA citation
+  // The hanging indent (margin-left: 2rem; text-indent: -2rem;) is applied via Tailwind classes
+  return (
+    <li
+      className="mb-4 ml-8 text-sm md:text-base"
+      style={{ textIndent: "-2rem" }}
+    >
+      {/* Author/Title section for the first part of the citation */}
+      <span className="font-semibold"> {citation.author}</span>{" "}
+      <span
+        dangerouslySetInnerHTML={{
+          __html: citation.title.replace(/\*(.*?)\*/g, "<i>$1</i>"),
+        }}
+      />
+      {/* Container/Publisher/Date */}
+      {citation.container && (
+        <>
+          <span className="italic"> {citation.container}</span>,{" "}
+        </>
+      )}
+      {citation.publisher && <> {citation.publisher}</>}
+      {citation.date && <> {citation.date}</>}
+      {citation.url && (
+        <>
+          <a
+            href={citation.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 break-words"
+          >
+            {/* Show only the domain and path, not the full protocol, for cleaner appearance */}{" "}
+            {citation.url.replace(/^https?:\/\//, "").replace(/\.$/, "")}
+          </a>
+          .
+        </>
+      )}
+    </li>
+  );
+};
+
 export default function BlogPost() {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -203,7 +285,7 @@ export default function BlogPost() {
               <div className="relative w-full max-w-lg mx-auto aspect-[4/3]">
                 <Image
                   src="/hog.png"
-                  alt="Hogwarts Houses"
+                  alt="Hogwarts Houses (Art by AniaArtNL on DeviantArt)"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-xl "
@@ -239,8 +321,21 @@ export default function BlogPost() {
             </section>
           </article>
         </div>
+        <section className="mt-16 max-w-3xl mx-auto p-8 bg-white dark:bg-gray-800 shadow-2xl rounded-xl border border-gray-200 dark:border-gray-700 relative z-10">
+          <h2
+            id="works-cited"
+            className="text-3xl font-bold mb-6 border-b-2 border-gray-300 pb-2 text-gray-900 dark:text-white text-center"
+          >
+            Works Cited
+          </h2>
+          <ul className="list-none p-0 m-0 text-gray-800 dark:text-gray-200">
+            {sortedCitations.map((citation, index) => (
+              <CitationEntry key={index} citation={citation} />
+            ))}
+          </ul>
+        </section>
       </main>
-      <footer className="py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+      <footer className="py-8 text-center text-sm text-gray-700 dark:text-gray-300">
         <p>&copy; {new Date().getFullYear()} My Blog. All rights reserved.</p>
       </footer>
     </div>

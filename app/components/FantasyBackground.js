@@ -97,7 +97,7 @@ export function FantasyBackground({ className }) {
       >
         <Image
           src="/witch.svg"
-          alt="Flying Witch"
+          alt="Flying Witch (Art by pngimg.com)"
           fill
           style={{ objectFit: "contain" }}
         />
