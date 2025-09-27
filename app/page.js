@@ -200,13 +200,13 @@ export default function BlogPost() {
                 discover more about ourselves.
               </p>
               <br />
-              <div className="relative w-full max-w-lg mx-auto aspect-[8/2]">
+              <div className="relative w-full max-w-lg mx-auto aspect-[4/3]">
                 <Image
-                  src="/hog.jpg"
+                  src="/hog.png"
                   alt="Hogwarts Houses"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-xl shadow-lg"
+                  className="rounded-xl "
                 />
               </div>
               <br />
