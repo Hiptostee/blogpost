@@ -11,7 +11,7 @@ const citations = [
     title: "Hogwarts House Banners.",
     container: "DeviantArt",
     date: "29 Jan. 2017,",
-    url: "https://www.deviantart.com/aniaartnl/art/Hogwarts-House-Banners-660290065.",
+    url: "https://www.deviantart.com/aniaartnl/art/Hogwarts-House-Banners-660290065",
   },
   {
     author: '"Flying Witch PNG Picture."',
